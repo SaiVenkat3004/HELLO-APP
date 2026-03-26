@@ -1,0 +1,29 @@
+public class HelloApp {
+    public static void main(String[] args) {
+
+        String greeting;
+
+        // Check if no arguments are provided
+        if (args.length == 0) {
+            greeting = "Hello, World!";
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
+
+            // Enhanced for loop
+            for (String name : args) {
+                nameBuilder.append(name).append(", ");
+            }
+
+            // Remove trailing ", "
+            if (nameBuilder.length() > 0) {
+                String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+                greeting = "Hello, " + names + "!";
+            } else {
+                greeting = "Hello, World!";
+            }
+        }
+
+        // Print output
+        System.out.println(greeting);
+    }
+}
